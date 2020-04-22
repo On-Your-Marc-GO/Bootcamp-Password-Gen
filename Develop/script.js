@@ -56,8 +56,11 @@ function generatePassword() {
   for (i = 0; i < userCriteria.passLength; i++) {
     //Write the logic on each loop to pick a random character from the passGenArray
     var randomCharacter = passGenArray[Math.floor(Math.random() * passGenArray.length)];
-    var password = password + randomCharacter;
+    var randPassword = randPassword + randomCharacter;
   }
+  // Returning UNDEFINED??? Where is that coming from?
+  console.log(randPassword);
+  return randPassword;
 }
 
 function writePassword() {
