@@ -10,11 +10,11 @@ var specialCharactersArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", 
 function userPassCriteria() {
   var passLength = prompt("How many characters would you like your password to be?\r\n(Valid Password Length is between 8-128 characters.)");
 
-  // Catch the user input and ensure it's correct ?????
-  // if (passLength < 8 || passLength > 128) {
-  //   alert("Your selected password length has to be at least 8 characters and no more than 128.");
-  //   passLength = prompt("Again, how many characters would you like your password to be?\r\n(Valid Password Length is between 8-128 characters.)");
-  // }
+  // Catch the user input and ensure it's the correct string length.
+  if (passLength < 8 || passLength > 128) {
+    alert("Your selected password length has to be at least 8 characters and no more than 128.");
+    userPassCriteria();
+  }
 
   var passLowerCase = confirm("Would you like your password to contain lowercase characters?");
   var passUpperCase = confirm("Would you like your passowrd to contain uppercase characters?");
@@ -44,22 +44,25 @@ function generatePassword() {
     passGenArray = passGenArray.concat(lowercaseLettersArray);
   }
   if (userCriteria.passUpperCase) {
-    passGenArray = passGenArray = passGenArray.concat(uppercaseLettersArray);
+    passGenArray = passGenArray.concat(uppercaseLettersArray);
   }
   if (userCriteria.passNumericChar) {
-    passGenArray = passGenArray = passGenArray.concat(numbersArray);
+    passGenArray = passGenArray.concat(numbersArray);
   }
   if (userCriteria.passSpecialChar) {
-    passGenArray = passGenArray = passGenArray.concat(specialCharactersArray);
+    passGenArray = passGenArray.concat(specialCharactersArray);
   }
+
+  // Initialze variable that will be built out as the FOR loop cycles.
+  var randPassword = "";
 
   for (i = 0; i < userCriteria.passLength; i++) {
     //Write the logic on each loop to pick a random character from the passGenArray
     var randomCharacter = passGenArray[Math.floor(Math.random() * passGenArray.length)];
-    var randPassword = randPassword + randomCharacter;
+    randPassword = randPassword + randomCharacter;
   }
   // Returning UNDEFINED??? Where is that coming from?
-  console.log(randPassword);
+  // console.log(randPassword);
   return randPassword;
 }
 
