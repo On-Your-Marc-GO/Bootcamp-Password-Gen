@@ -1,66 +1,78 @@
-# Your Project Title
+# Bootcamp: Random Password Generator
+
+## Site Link
+
+![Random Password Generator](https://on-your-marc-go.github.io/Bootcamp-Password-Gen/)
 
 ## Description
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
+Passwords. Everyone has one and everyone needs one to access various different systems. Whether it be logging into Facebook or access a very secure server, it is best practice to have unique password that is difficult to replicate. The purpose of this project was to create application that would create a password utilizing criteria the user designated.
 
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
+Key takeaways on this project were the utilization of functions, initializion of objects with properties, use of conditional logic to evaluate conditions, and implementation of loops to process actions. The application starts simply enough with asking how long the user wants to have the password and what kind of characters they want it to be comprised of (uppercase, lowercase, numbers, etc.). At least one is needed to generate the password so we implement validation logic to ensure the user follows the prompts correctly.
 
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
+With all our choices in tow, an object is created continaing those choices as properties. Utilzing that object we are able to generate a password by checking the properties, loading the designated characters into an array and then random selecting characters to add to our password through a 'for' loop.
 
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? If your project has a lot of features, consider adding a heading called "Features" and listing them here.
-
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
+The end result is a password output to the screen for the user to view, copy/paste, and move about their business.
 
 ## Table of Contents (Optional)
 
 If your README is very long, add a table of contents to make it easy for users to find what they need.
 
 - [Installation](#installation)
-- [Usage](#usage)
+- [Example](#example)
 - [Credits](#credits)
 - [License](#license)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+1. From the Repo screen clone this repository to your local machine. Assuming you have a valid git terminal and SSH key, you can utilize the SSH URL provided along with the 'git clone' command.
+2. Open the repo in whatever development environment you so choose (ex. Visual Studio Code)
+3. Once viewing the source you may open in your default browser to view and inspect the page as you see fit.
 
-## Usage
+Alternatively you may refer to the 'Site Link' provided above to visit the site as it has been depoloyed via GitHub Pages.
 
-Provide instructions and examples for use. Include screenshots as needed.
+## Example
+
+![Initial Application View](/assets/images/Initial-screen.png)
+
+- From the intial screen the only option you'll have is to click the button given.
+
+![Prompt for user input](/assets/images/Character-Length-Prompt.png)
+
+- Upon clicking the button, you will be taken through a series of prompts asking for what you wish you password to be comprised of.
+
+![Example password display](/assets/images/Displayed-Password.png)
+
+- At the end of the prompts, a randomly generated password will be given to you on the screen. You may choose to generate another one or copy/paste what is given and close the application.
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+- ![MDN Webdocs for general reference](https://developer.mozilla.org/en-US/)
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+- ![Stackoverflow: Array Random string selection](https://stackoverflow.com/questions/7350363/select-a-random-string-from-an-array)
 
 ## License
 
-The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
+MIT License
 
----
+Copyright (c) 2020 Marc Arguijo
 
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Badges
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Contributing
-
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
-
----
-
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+© 2029 Marc Arguijo All Rights Reserved.
