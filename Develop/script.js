@@ -8,24 +8,31 @@ var specialCharactersArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", 
 
 // Write password to the #password input
 function userPassCriteria() {
+  // Reset passGenArray to allow this to be run multiple times in succession.
+  resetApp();
+
+  // Ask user for their password length.
   var passLength = prompt("How many characters would you like your password to be?\r\n(Valid Password Length is between 8-128 characters.)");
 
-  // Catch the user input and ensure it's the correct string length.
+  // Catch the user input and ensure it's the correct string length. PRompt user to input valid character length is not between 8-128.
   if (passLength < 8 || passLength > 128) {
     alert("Your selected password length has to be at least 8 characters and no more than 128.");
     userPassCriteria();
   }
 
+  // Ask user if they would like at least one of the specified characters type.
   var passLowerCase = confirm("Would you like your password to contain lowercase characters?");
   var passUpperCase = confirm("Would you like your passowrd to contain uppercase characters?");
   var passNumericChar = confirm("Would you like your password to contain numbers?");
   var passSpecialChar = confirm("Would you like your password to contain special characters?\r\n(Ex. $, %, &, @)");
 
   // Conditional Logic needed here to check if they selected at least of one of the Special????
-  // if ((passLowerCase, passUpperCase, passNumericChar, passSpecialChar === false){
-  //   alert("Pick an option dummy.");
-  // }
+  if (!passLowerCase && !passUpperCase && !passNumericChar && !passSpecialChar) {
+    alert("Please select at least one character type to include in your password.");
+    userPassCriteria();
+  }
 
+  // Set user input in an object that will be returned out of the function for other functions to manipulate
   var userCriteriaChoices = {
     passLength: passLength,
     passLowerCase: passLowerCase,
@@ -40,6 +47,8 @@ function userPassCriteria() {
 function generatePassword() {
   var userCriteria = userPassCriteria();
 
+  // Conditional statements read user input from object and add the associated array to our passGenArray
+  // which will be used to pull random characters from.
   if (userCriteria.passLowerCase) {
     passGenArray = passGenArray.concat(lowercaseLettersArray);
   }
@@ -57,12 +66,12 @@ function generatePassword() {
   var randPassword = "";
 
   for (i = 0; i < userCriteria.passLength; i++) {
-    //Write the logic on each loop to pick a random character from the passGenArray
+    // pick a random character from the passGenArray and concat that to the randPassword variable
+    // which is returned out to be printed.
     var randomCharacter = passGenArray[Math.floor(Math.random() * passGenArray.length)];
     randPassword = randPassword + randomCharacter;
   }
-  // Returning UNDEFINED??? Where is that coming from?
-  // console.log(randPassword);
+
   return randPassword;
 }
 
@@ -73,7 +82,9 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// Fucntion to clear arrays used in password generation
+function resetApp() {
+  passGenArray = [];
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//MIGHT NEED TO DO A RESET STATS TYPE FUNCTION AFTER A PASSWORD IS GENERATED TO CLEAR OUR ARRAYS. ETC.
