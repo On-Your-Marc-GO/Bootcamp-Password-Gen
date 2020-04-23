@@ -47,9 +47,9 @@ Alternatively you may refer to the 'Site Link' provided above to visit the site 
 
 ## Credits
 
-- ![MDN Webdocs for general reference](https://developer.mozilla.org/en-US/)
+- [MDN Webdocs for general reference](https://developer.mozilla.org/en-US/)
 
-- ![Stackoverflow: Array Random string selection](https://stackoverflow.com/questions/7350363/select-a-random-string-from-an-array)
+- [Stackoverflow: Array Random string selection](https://stackoverflow.com/questions/7350363/select-a-random-string-from-an-array)
 
 ## License
 
