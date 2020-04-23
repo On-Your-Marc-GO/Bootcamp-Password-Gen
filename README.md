@@ -2,7 +2,7 @@
 
 ## Site Link
 
-![Random Password Generator](https://on-your-marc-go.github.io/Bootcamp-Password-Gen/)
+[Random Password Generator](https://on-your-marc-go.github.io/Bootcamp-Password-Gen/)
 
 ## Description
 
@@ -33,15 +33,15 @@ Alternatively you may refer to the 'Site Link' provided above to visit the site 
 
 ## Example
 
-![Initial Application View](/assets/images/Initial-screen.png)
+![Initial Application View](./Assets/images/Initial-screen.png)
 
 - From the intial screen the only option you'll have is to click the button given.
 
-![Prompt for user input](/assets/images/Character-Length-Prompt.png)
+![Prompt for user input](./Assets/images/Character-Length-Prompt.png)
 
 - Upon clicking the button, you will be taken through a series of prompts asking for what you wish you password to be comprised of.
 
-![Example password display](/assets/images/Displayed-Password.png)
+![Example password display](./Assets/images/Displayed-Password.png)
 
 - At the end of the prompts, a randomly generated password will be given to you on the screen. You may choose to generate another one or copy/paste what is given and close the application.
 
