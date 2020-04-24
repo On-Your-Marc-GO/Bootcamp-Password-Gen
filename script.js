@@ -6,26 +6,31 @@ var lowercaseLettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "
 var numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharactersArray = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@"];
 
+var passLength;
+var passLowerCase;
+var passUpperCase;
+var passNumericChar;
+var passSpecialChar;
+
 // Write password to the #password input
 function userPassCriteria() {
   // Reset passGenArray to allow this to be run multiple times in succession.
   resetApp();
 
   // Ask user for their password length.
-  var passLength = prompt("How many characters would you like your password to be?\r\n(Valid Password Length is between 8-128 characters.)");
+  passLength = prompt("How many characters would you like your password to be?\r\n(Valid Password Length is between 8-128 characters.)");
+
+  // Ask user if they would like at least one of the specified characters type.
+  passLowerCase = confirm("Would you like your password to contain lowercase characters?");
+  passUpperCase = confirm("Would you like your passowrd to contain uppercase characters?");
+  passNumericChar = confirm("Would you like your password to contain numbers?");
+  passSpecialChar = confirm("Would you like your password to contain special characters?\r\n(Ex. $, %, &, @)");
 
   // Catch the user input and ensure it's the correct string length. PRompt user to input valid character length is not between 8-128.
-  if (passLength < 8 || passLength > 128) {
+  if (passLength < 8 || passLength > 128 || passLength === null) {
     alert("Your selected password length has to be at least 8 characters and no more than 128.");
     userPassCriteria();
   }
-
-  // Ask user if they would like at least one of the specified characters type.
-  var passLowerCase = confirm("Would you like your password to contain lowercase characters?");
-  var passUpperCase = confirm("Would you like your passowrd to contain uppercase characters?");
-  var passNumericChar = confirm("Would you like your password to contain numbers?");
-  var passSpecialChar = confirm("Would you like your password to contain special characters?\r\n(Ex. $, %, &, @)");
-
   // Conditional Logic needed here to check if they selected at least of one of the Special????
   if (!passLowerCase && !passUpperCase && !passNumericChar && !passSpecialChar) {
     alert("Please select at least one character type to include in your password.");
@@ -85,6 +90,11 @@ function writePassword() {
 // Fucntion to clear arrays used in password generation
 function resetApp() {
   passGenArray = [];
+  passLength;
+  passLowerCase = "";
+  passUpperCase = "";
+  passNumericChar = "";
+  passSpecialChar = "";
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
